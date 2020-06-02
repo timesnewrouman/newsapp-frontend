@@ -4,12 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 const isDev = process.env.NODE_ENV === 'development';
 
 new webpack.DefinePlugin({
-  'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-})
+  NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+});
 
 module.exports = {
   entry: { main: './src/js/script.js' },
@@ -56,7 +57,7 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      cssProcessor: cssnano,
       cssProcessorPluginOptions: {
         preset: ['default'],
       },

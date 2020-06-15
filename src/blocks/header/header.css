@@ -1,0 +1,18 @@
+@import url(./__name/header__name.css);
+@import url(./__user/header__user.css);
+@import url(./__main/header__main.css);
+@import url(./__saved/header__saved.css);
+@import url(./__logout/header__logout.css);
+@import url(./__menu/header__menu.css);
+@import url(./__close/header__close.css);
+@import url(./_mobile/header_mobile.css);
+@import url(./_saved/header_saved.css);
+
+.header {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgba(108, 112, 114, 0.719);
+  z-index: 3;
+}

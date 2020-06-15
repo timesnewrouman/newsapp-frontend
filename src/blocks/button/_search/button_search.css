@@ -1,0 +1,25 @@
+.button.button_search {
+  background: #2F71E5;
+  padding: 20px 54px;
+  margin: -1px -1px -1px auto;
+  border: 0;
+}
+
+.button.button_search:hover {
+  background: #347EFF;
+}
+
+@media screen and (max-width : 800px) {
+  .button.button_search {
+    padding: 16px 50px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .button.button_search {
+    position: absolute;
+    bottom: -70px;
+    max-width: 288px;
+    padding: 16px 114px;
+  }
+}

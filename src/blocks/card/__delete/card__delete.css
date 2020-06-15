@@ -1,0 +1,45 @@
+.card__delete {
+  border-radius: 8px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../../images/trash-icon.svg);
+  border: none;
+  padding: 0;
+  cursor: url(../../../images/lapka.svg), auto;
+}
+
+.card__delete:hover {
+  background-image: url(../../../images/trash-icon-hover.svg);
+}
+
+.card__delete:hover + .card__alert {
+  display: block;
+}
+
+.card__delete:hover ~ .card__tag {
+  display: none;
+}
+
+@media screen and (max-width : 992px) {
+  .card__delete {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media screen and (max-width : 820px) {
+  .card__delete {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .card__delete {
+    top: 16px;
+    right: 16px;
+  }
+}

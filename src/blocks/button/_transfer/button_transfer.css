@@ -1,0 +1,10 @@
+.button.button_transfer {
+  color: #2F71E5;
+  padding: 0 0 0 5px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: unset;
+  border: none;
+  background-color: #fff;
+}

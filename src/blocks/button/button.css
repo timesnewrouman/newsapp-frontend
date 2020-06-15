@@ -1,0 +1,19 @@
+@import url(./_header/button_header.css);
+@import url(./_mobile/button_mobile.css);
+@import url(./_search/button_search.css);
+@import url(./_popup/button_popup.css);
+@import url(./_transfer/button_transfer.css);
+@import url(./_success/button_success.css);
+@import url(./_enabled/button_enabled.css);
+@import url(./_show-more/button_show-more.css);
+@import url(./_saved/button_saved.css);
+
+.button {
+  display: flex;
+  border-radius: 100px;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  cursor: url(../../images/lapka.svg), auto;
+}

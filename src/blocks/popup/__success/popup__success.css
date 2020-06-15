@@ -1,0 +1,10 @@
+.popup__success {
+  position: relative;
+  display: none;
+  width: 430px;
+  height: 182px;
+  align-self: center;
+  z-index: 4;
+  background-color: white;
+  border-radius: 16px;
+}

@@ -1,0 +1,12 @@
+.header__user {
+}
+
+@media screen and (max-width : 992px) {
+  .header__user {
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .header__user {
+  }
+}

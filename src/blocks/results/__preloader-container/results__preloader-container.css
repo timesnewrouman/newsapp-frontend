@@ -1,0 +1,5 @@
+@import url(./_is-activated/results__preloader-container_is-activated.css);
+
+.results__preloader-container {
+  display: none;
+}

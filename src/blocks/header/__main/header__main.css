@@ -1,0 +1,35 @@
+@import url(./_mobile/header__main_mobile.css);
+@import url(./_saved/header__main_saved.css);
+
+.header__main {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 30px 0 26px 0;
+  margin: 0 32px 0 0;
+  border-bottom: solid #FFF 3px;
+  align-self: center;
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media screen and (max-width : 992px) {
+  .header__main {
+    font-size: 16px;
+    padding: 22px 0 17px 0;
+    margin: 0 16px 0 0;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .header__main {
+    padding: 19px 0 14px 0;
+    margin: 0 12px 0 0;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .header__main {
+    display: none;
+  }
+}

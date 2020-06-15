@@ -1,0 +1,41 @@
+.footer__link-fb {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 106px;
+  margin: 30px 0;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+  text-decoration: none;
+}
+
+.footer__link-fb:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width : 1200px) {
+  .footer__link-fb {
+    right: 60px;
+  }
+}
+
+@media screen and (max-width : 800px) {
+  .footer__link-fb {
+    margin: 21px 0;
+    right: 41px;
+  }
+}
+
+@media screen and (max-width : 750px) {
+  .footer__link-fb {
+    margin: 21px 0;
+    right: 24px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .footer__link-fb {
+    margin: 22px 0;
+    right: 18px;
+  }
+}

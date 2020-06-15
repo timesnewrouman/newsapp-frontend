@@ -1,0 +1,23 @@
+.header__main.header__main_saved {
+  border-bottom: none;
+  color: #1A1B22;
+  padding: 30px 0 29px 0;
+}
+
+@media screen and (max-width : 992px) {
+  .header__main.header__main_saved {
+    padding: 22px 0 20px 0;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .header__main.header__main_saved {
+    padding: 19px 0 17px 0;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .header__main.header__main_saved {
+    display: none;
+  }
+}

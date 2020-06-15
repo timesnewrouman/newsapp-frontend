@@ -1,0 +1,30 @@
+.search__text {
+  display: flex;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+  max-width: 376px;
+  min-width: 228px;
+  margin: 0 40px 0 24px;
+  border: 0;
+  padding: 21px 0;
+}
+
+@media screen and (max-width : 800px) {
+  .search__text {
+    padding: 17px 0;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .search__text {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .search__text {
+    min-width: 240px;
+    margin: 0 24px 0 24px;
+  }
+}

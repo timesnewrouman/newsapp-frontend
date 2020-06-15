@@ -1,0 +1,17 @@
+.header__main.header__main_mobile {
+  display: block;
+  margin: 0 0 32px 0;
+  padding: 40px 0 0 16px;
+  border-bottom: none;
+  align-self: auto;
+  border-top: 1px solid rgba(108, 112, 114, 0.719);
+}
+
+.header__main.header__main_saved.header__main_mobile {
+  display: block;
+  margin: 0 0 32px 0;
+  padding: 40px 0 0 16px;
+  border-bottom: none;
+  align-self: auto;
+  border-top: 1px solid rgba(108, 112, 114, 0.719);
+}

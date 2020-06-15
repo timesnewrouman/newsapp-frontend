@@ -1,0 +1,14 @@
+@import url(./_is-opened/header__menu_is-opened.css);
+
+.header__menu {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+@media screen and (max-width : 576px) {
+  .header__menu {
+    display: flex;
+  }
+}

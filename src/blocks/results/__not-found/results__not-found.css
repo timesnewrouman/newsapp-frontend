@@ -1,0 +1,6 @@
+@import url(./_is-activated/results__not-found_is-activated.css);
+
+.results__not-found {
+  display: none;
+  flex-direction: column;
+}

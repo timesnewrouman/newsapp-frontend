@@ -1,0 +1,7 @@
+.form__field-value {
+  font-size: 14px;
+  border: 0;
+  padding: 0 0 9px 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  margin-bottom: 30px;
+}

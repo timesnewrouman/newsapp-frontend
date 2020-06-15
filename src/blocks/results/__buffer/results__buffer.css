@@ -1,0 +1,20 @@
+.results__buffer {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 104px;
+}
+
+@media screen and (max-width : 800px) {
+  .results__buffer {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .results__buffer {
+    padding-left: 16px;
+  }
+}

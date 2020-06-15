@@ -1,0 +1,11 @@
+.header.header_mobile {
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+  background-color: #2A2C2F;
+  border-radius: 0 0 16px 16px;
+  z-index: 4;
+}

@@ -1,0 +1,10 @@
+@import url(./__overlay/page__overlay.css);
+
+.page {
+  background-color: #fff;
+  color: #1A1B22;
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  font-family: 'Roboto', Arial, sans-serif;
+}

@@ -1,0 +1,8 @@
+@import url(./_success/form__name_success.css);
+
+.form__name {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0 0 22px 0;
+}

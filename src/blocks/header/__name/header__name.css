@@ -1,0 +1,31 @@
+@import url(./_saved/header__name_saved.css);
+
+.header__name {
+  margin: 30px auto 26px 104px;
+  color: #FFF;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  z-index: 2;
+}
+
+@media screen and (max-width : 992px) {
+  .header__name {
+    margin: 23px auto 19px 40px;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .header__name {
+    font-size: 16px;
+    margin: 20px auto 16px 24px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .header__name {
+    margin: 16px auto 16px 16px;
+  }
+}

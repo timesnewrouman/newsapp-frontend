@@ -1,0 +1,22 @@
+@import url(./__preloader/results__preloader.css);
+@import url(./__preloader-container/results__preloader-container.css);
+@import url(./__preloader-text/results__preloader-text.css);
+@import url(./__not-found-explanation/results__not-found-explanation.css);
+@import url(./__not-found-image/results__not-found-image.css);
+@import url(./__not-found-text/results__not-found-text.css);
+@import url(./__not-found/results__not-found.css);
+@import url(./__cards-container/results__cards-container.css);
+@import url(./__found/results__found.css);
+@import url(./__header/results__header.css);
+@import url(./__info/results__info.css);
+@import url(./__preview/results__preview.css);
+@import url(./__buffer/results__buffer.css);
+@import url(./__preview-tags/results__preview-tags.css);
+
+.results {
+  position: relative;
+  margin: 0;
+  min-height: 282px;
+  background: #F5F6F7;
+  overflow: hidden;
+}

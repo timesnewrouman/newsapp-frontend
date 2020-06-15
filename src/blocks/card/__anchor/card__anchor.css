@@ -1,0 +1,39 @@
+@import url(./_marked/card__anchor_marked.css);
+
+.card__anchor {
+  border-radius: 8px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../../images/anchor.svg);
+  border: none;
+  padding: 0;
+  cursor: url(../../../images/lapka.svg), auto;
+}
+
+.card__anchor:hover {
+  background-image: url(../../../images/anchor-hover.svg);
+}
+
+@media screen and (max-width : 992px) {
+  .card__anchor {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media screen and (max-width : 820px) {
+  .card__anchor {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .card__anchor {
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,13 @@
+@import url(./_logged-in/header__logout_logged-in.css);
+
+.header__logout {
+  align-self: center;
+  display: none;
+  padding-left: 10px;
+}
+
+@media screen and (max-width : 992px) {
+  .header__logout {
+    padding-left: 8px;
+  }
+}

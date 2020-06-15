@@ -1,0 +1,8 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(../src/blocks/footer/footer.css);
+@import url(../src/blocks/header/header.css);
+@import url(../src/blocks/page/page.css);
+@import url(../src/blocks/button/button.css);
+@import url(../src/blocks/results/results.css);
+@import url(../src/blocks/card/card.css);

@@ -1,0 +1,11 @@
+.button.button_header.button_mobile {
+  display: flex;
+  margin: 0 auto 21px auto;
+  justify-content: center;
+}
+
+.button.button_saved.button_mobile {
+  display: flex;
+  margin: 0 auto 21px auto;
+  justify-content: center;
+}

@@ -1,0 +1,8 @@
+.results__not-found-explanation {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 16px auto 80px auto;
+  color: #B6BCBF;
+  max-width: 340px;
+  text-align: center;
+}

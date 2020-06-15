@@ -1,0 +1,9 @@
+.form__field-error_email {
+  top: 138px;
+}
+
+@media screen and (max-width : 576px) {
+  .form__field-error_email {
+    top: 120px;
+  }
+}

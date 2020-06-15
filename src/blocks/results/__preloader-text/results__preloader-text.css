@@ -1,0 +1,10 @@
+.results__preloader-text {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  color: #B6BCBF;
+}

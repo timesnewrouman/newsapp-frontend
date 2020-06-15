@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="Ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NewsExplorer</title>
+  <meta name="author" content="Жигайков Роман">
+  <meta name="description" content="сервис, в котором можно найти новости по запросу и сохранить в личном кабинете.">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css%>">
+  <link rel="icon" href="<%=require('./images/favicon.png')%>" type="image/png">
+</head>
+
+<body>
+  <div class="page">
+    <div class="page__overlay"></div>
+    <header class="header">
+      <h4 class="header__name">NewsExplorer</h4>
+      <a class="header__main" href="./index.html">Главная</a>
+      <a class="header__saved" href="./articles.html">Сохраненные статьи</a>
+      <button class="button button_header">
+        Авторизоваться
+        <img class="header__logout" src="<%=require('./images/logout.svg')%>" alt="Иконка выхода">
+      </button>
+      <img class="header__menu" src="<%=require('./images/menu.svg')%>" alt="Иконка меню">
+      <img class="header__close" src="<%=require('./images/close.svg')%>" alt="Иконка закрытия меню">
+    </header>
+
+    <main>
+      <section class="search">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__info">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <div class="search__field">
+          <input type="text" class="search__text" placeholder="Введите тему новости">
+          <button class="button button_search">Искать</button>
+        </div>
+      </section>
+
+      <section class="popup">
+        <div class="popup__login">
+          <form class="form" name="login">
+            <img class="popup__close" src="<%=require('./images/popup-close.svg')%>" alt="Иконка закрытия">
+            <h3 class="form__name">Вход</h3>
+            <div class="form__field">
+              <h6 class="form__field-name">Email</h6>
+              <input class="form__field-value" type="email" name="email" placeholder="Введите почту" required>
+              <span class="form__field-error form__field-error_email" aria-live="polite">Неправильный формат
+                email</span>
+            </div>
+            <div class="form__field">
+              <h6 class="form__field-name">Пароль</h6>
+              <input class="form__field-value" type="password" name="password" placeholder="Введите пароль" required>
+              <span class="form__field-error form__field-error_password" aria-live="polite">Неправильный формат
+                пароля</span>
+            </div>
+            <button class="button button_popup" type="submit">Войти</button>
+            <p class="form__transfer">или<button class="button button_transfer"
+                type="button">Зарегистрироваться</button></p>
+          </form>
+        </div>
+        <div class="popup__signup">
+          <form class="form" name="signup">
+            <img class="popup__close" src="<%=require('./images/popup-close.svg')%>" alt="Иконка закрытия">
+            <h3 class="form__name">Вход</h3>
+            <div class="form__field">
+              <h6 class="form__field-name">Email</h6>
+              <input class="form__field-value" type="email" name="email" placeholder="Введите почту" required>
+              <span class="form__field-error form__field-error_email" aria-live="polite">Неправильный формат
+                email</span>
+            </div>
+            <div class="form__field">
+              <h6 class="form__field-name">Пароль</h6>
+              <input class="form__field-value" type="password" name="password" placeholder="Введите пароль" required>
+              <span class="form__field-error form__field-error_password" aria-live="polite">Неправильный формат
+                пароля</span>
+            </div>
+            <div class="form__field">
+              <h6 class="form__field-name">Имя</h6>
+              <input class="form__field-value" type="text" name="name" placeholder="Введите своё имя" required>
+              <span class="form__field-error form__field-error_user" aria-live="polite">Такой пользователь уже
+                есть</span>
+            </div>
+            <button class="button button_popup" type="submit">Зарегистрироваться</button>
+            <p class="form__transfer">или<button class="button button_transfer" type="button">Войти</button></p>
+          </form>
+        </div>
+        <div class="popup__success">
+          <form class="form" name="success">
+            <img class="popup__close" src="<%=require('./images/popup-close.svg')%>" alt="Иконка закрытия">
+            <h3 class="form__name form__name_success">Пользователь успешно зарегистрирован!</h3>
+            <button class="button button_transfer button_success" type="button">Выполнить вход</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="results__preloader-container">
+          <i class="results__preloader"></i>
+          <span class="results__preloader-text">Идет поиск новостей...</span>
+        </div>
+        <div class="results__not-found">
+          <img class="results__not-found-image" alt="Грустное лицо" src="<%=require('./images/not-found.svg')%>">
+          <span class="results__not-found-text">Ничего не найдено</span>
+          <span class="results__not-found-explanation">К сожалению по вашему запросу ничего не найдено.</span>
+        </div>
+        <div class="results__found">
+          <h2 class="results__header">Результаты поиска</h2>
+          <div class="results__cards-container">
+            <div class="card">
+              <img class="card__image" alt="Изображение парка" src="<%=require('./images/parks1.png')%>">
+              <button class="card__anchor" type="button"></button>
+              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
+              <span class="card__date">2 августа, 2019</span>
+              <h4 class="card__name">Национальное достояние – парки</h4>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">Лента.ру</span>
+            </div>
+            <div class="card">
+              <img class="card__image" alt="Изображение лесных огоньков"
+                src="<%=require('./images/forest_lights.png')%>">
+              <button class="card__anchor" type="button"></button>
+              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
+              <span class="card__date">2 августа, 2019</span>
+              <h4 class="card__name">Лесные огоньки: история одной фотографии</h4>
+              <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
+                запечатлеть ускользающую красоту одного
+                из местных чудес природы.</p>
+              <span class="card__source">Медуза</span>
+            </div>
+            <div class="card">
+              <img class="card__image" alt="Изображение тайги" src="<%=require('./images/taiga.png')%>">
+              <button class="card__anchor" type="button"></button>
+              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
+              <span class="card__date">2 августа, 2019</span>
+              <h4 class="card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
+                необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+              <span class="card__source">Риа</span>
+            </div>
+          </div>
+          <button class="button button_show-more" type="button">Показать ещё</button>
+        </div>
+      </section>
+
+      <section class="about">
+        <img src="<%=require('./images/avatar.png')%>" class="about__photo" alt="Фотография автора">
+        <div class="about__container">
+          <h3 class="about__header">Об авторе</h3>
+          <p class="about__info">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем
+            вы занимаетесь, какими технологиями разработки владеете.<br><br> Также можно рассказать о процессе
+            обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
+      <a href="./index.html" class="footer__link-main">Главная</a>
+      <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__link-yp">Яндекс.Практикум</a>
+      <a href="https://ru-ru.facebook.com/yandex.praktikum/" target="_blank" class="footer__link-fb">
+        <img src="<%=require('./images/facebook.svg')%>" alt="Логотип Facebook"></a>
+      <a href="https://github.com/" target="_blank" class="footer__link-git">
+        <img src="<%=require('./images/github.svg')%>" alt="Логотип Github"></a>
+    </footer>
+
+  </div>
+  <script src="<%=htmlWebpackPlugin.files.js%>"></script>
+</body>
+
+</html>

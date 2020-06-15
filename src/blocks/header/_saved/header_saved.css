@@ -1,0 +1,10 @@
+.header.header_mobile.header_saved {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width : 576px) {
+  .header.header_mobile.header_saved {
+    background-color: lightgray;
+  }
+}

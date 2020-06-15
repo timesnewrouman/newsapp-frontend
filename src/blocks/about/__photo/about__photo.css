@@ -1,0 +1,35 @@
+.about__photo {
+  margin: 80px 56px 80px 104px;
+}
+
+@media screen and (max-width : 1200px) {
+  .about__photo {
+    width: 370px;
+    height: 370px;
+    margin: 61px 50px 61px 60px;
+  }
+}
+
+@media screen and (max-width : 992px) {
+  .about__photo {
+    width: 320px;
+    height: 320px;
+    margin: 61px 32px 61px 40px;
+  }
+}
+
+@media screen and (max-width : 800px) {
+  .about__photo {
+    width: 232px;
+    height: 232px;
+    margin: 61px 24px 61px 24px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .about__photo {
+    width: 272px;
+    height: 272px;
+    margin: 32px auto 24px auto;
+  }
+}

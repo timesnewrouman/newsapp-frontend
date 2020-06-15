@@ -1,0 +1,20 @@
+@import url(./__field-error/form__field-error.css);
+@import url(./__field-name/form__field-name.css);
+@import url(./__field-value/form__field-value.css);
+@import url(./__field/form__field.css);
+@import url(./__name/form__name.css);
+@import url(./__transfer/form__transfer.css);
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 34px 36px 26px 36px;
+}
+
+@media screen and (max-width : 576px) {
+  .form {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,17 @@
+.results__header.results__header_saved {
+  margin: 28px auto 0 0;
+}
+
+@media screen and (max-width : 800px) {
+  .results__header.results__header_saved {
+    margin: 16px auto 0 0;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .results__header.results__header_saved {
+    width: 90%;
+    max-width: 350px;
+    margin: 16px auto 0 0;
+  }
+}

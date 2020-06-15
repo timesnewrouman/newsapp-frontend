@@ -1,0 +1,12 @@
+.header__saved.header__saved_mobile {
+  margin: 0 0 32px 16px;
+  align-self: auto;
+  color: #ffffff;
+}
+
+.header__saved_saved.header__saved.header__saved_mobile {
+  margin: 0 0 32px 16px;
+  align-self: auto;
+  color: #1A1B22;
+  display: block;
+}

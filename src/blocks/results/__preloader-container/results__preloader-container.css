@@ -2,4 +2,5 @@
 
 .results__preloader-container {
   display: none;
+  min-height: 282px;
 }

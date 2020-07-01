@@ -15,6 +15,7 @@
   top: 24px;
   right: 69px;
   display: none;
+  z-index: 3;
 }
 
 @media screen and (max-width : 992px) {

@@ -1,4 +1,19 @@
+@import url(./_exist/results__found_exist.css);
+
 .results__found {
-  display: flex;
+  display: none;
   flex-direction: column;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width : 800px) {
+  .results__found {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width : 576px) {
+  .results__found {
+    margin-bottom: 22px;
+  }
 }

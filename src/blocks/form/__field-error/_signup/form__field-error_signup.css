@@ -1,0 +1,5 @@
+@media screen and (max-width : 576px) {
+  .form__field-error.form__field-error_button.form__field-error_signup {
+    bottom: 205px;
+  }
+}

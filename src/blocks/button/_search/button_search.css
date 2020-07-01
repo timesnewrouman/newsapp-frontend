@@ -1,8 +1,12 @@
 .button.button_search {
   background: #2F71E5;
   padding: 20px 54px;
-  margin: -1px -1px -1px auto;
+  margin: 0;
   border: 0;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
 }
 
 .button.button_search:hover {
@@ -17,7 +21,8 @@
 
 @media screen and (max-width : 576px) {
   .button.button_search {
-    position: absolute;
+    top: unset;
+    right: unset;
     bottom: -70px;
     max-width: 288px;
     padding: 16px 114px;

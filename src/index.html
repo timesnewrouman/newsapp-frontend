@@ -20,7 +20,7 @@
       <a class="header__main" href="./index.html">Главная</a>
       <a class="header__saved" href="./articles.html">Сохраненные статьи</a>
       <button class="button button_header">
-        Авторизоваться
+        <span class="button_text">Авторизоваться</span>
         <img class="header__logout" src="<%=require('./images/logout.svg')%>" alt="Иконка выхода">
       </button>
       <img class="header__menu" src="<%=require('./images/menu.svg')%>" alt="Иконка меню">
@@ -45,51 +45,52 @@
             <div class="form__field">
               <h6 class="form__field-name">Email</h6>
               <input class="form__field-value" type="email" name="email" placeholder="Введите почту" required>
-              <span class="form__field-error form__field-error_email" aria-live="polite">Неправильный формат
-                email</span>
+              <div class="form__field-error form__field-error_email" aria-live="polite"></div>
             </div>
             <div class="form__field">
               <h6 class="form__field-name">Пароль</h6>
               <input class="form__field-value" type="password" name="password" placeholder="Введите пароль" required>
-              <span class="form__field-error form__field-error_password" aria-live="polite">Неправильный формат
-                пароля</span>
+              <div class="form__field-error form__field-error_password" aria-live="polite"></div>
             </div>
-            <button class="button button_popup" type="submit">Войти</button>
-            <p class="form__transfer">или<button class="button button_transfer"
-                type="button">Зарегистрироваться</button></p>
+            <button class="button button_popup button_login" type="button">Войти</button>
+            <div class="form__field-error form__field-error_button form__field-error_login" aria-live="polite"></div>
+            <span class="form__transfer">или<button class="button button_transfer button_transfer-to-signup"
+                type="button">Зарегистрироваться</button></span>
           </form>
         </div>
         <div class="popup__signup">
           <form class="form" name="signup">
             <img class="popup__close" src="<%=require('./images/popup-close.svg')%>" alt="Иконка закрытия">
-            <h3 class="form__name">Вход</h3>
+            <h3 class="form__name">Зарегистрироваться</h3>
             <div class="form__field">
               <h6 class="form__field-name">Email</h6>
               <input class="form__field-value" type="email" name="email" placeholder="Введите почту" required>
-              <span class="form__field-error form__field-error_email" aria-live="polite">Неправильный формат
-                email</span>
+              <div class="form__field-error form__field-error_email" aria-live="polite"></div>
             </div>
             <div class="form__field">
               <h6 class="form__field-name">Пароль</h6>
               <input class="form__field-value" type="password" name="password" placeholder="Введите пароль" required>
-              <span class="form__field-error form__field-error_password" aria-live="polite">Неправильный формат
-                пароля</span>
+              <div class="form__field-error form__field-error_password" aria-live="polite"></div>
             </div>
             <div class="form__field">
               <h6 class="form__field-name">Имя</h6>
-              <input class="form__field-value" type="text" name="name" placeholder="Введите своё имя" required>
-              <span class="form__field-error form__field-error_user" aria-live="polite">Такой пользователь уже
-                есть</span>
+              <input class="form__field-value" type="text" name="name" placeholder="Введите своё имя" maxlength="30"
+                minlength="2" required>
+              <div class="form__field-error form__field-error_user" aria-live="polite"></div>
             </div>
-            <button class="button button_popup" type="submit">Зарегистрироваться</button>
-            <p class="form__transfer">или<button class="button button_transfer" type="button">Войти</button></p>
+            <button class="button button_popup button_signup" type="button">Зарегистрироваться</button>
+            <div class="form__field-error form__field-error_button form__field-error_signup" aria-live="polite"></div>
+            <p class="form__transfer">или<button class="button button_transfer button_transfer-to-login"
+                type="button">Войти</button></p>
           </form>
         </div>
         <div class="popup__success">
           <form class="form" name="success">
             <img class="popup__close" src="<%=require('./images/popup-close.svg')%>" alt="Иконка закрытия">
             <h3 class="form__name form__name_success">Пользователь успешно зарегистрирован!</h3>
-            <button class="button button_transfer button_success" type="button">Выполнить вход</button>
+            <span class="form__transfer">
+              <button class="button button_transfer button_success" type="button">Выполнить вход</button>
+            </span>
           </form>
         </div>
       </section>
@@ -107,39 +108,6 @@
         <div class="results__found">
           <h2 class="results__header">Результаты поиска</h2>
           <div class="results__cards-container">
-            <div class="card">
-              <img class="card__image" alt="Изображение парка" src="<%=require('./images/parks1.png')%>">
-              <button class="card__anchor" type="button"></button>
-              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Национальное достояние – парки</h4>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">Лента.ру</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение лесных огоньков"
-                src="<%=require('./images/forest_lights.png')%>">
-              <button class="card__anchor" type="button"></button>
-              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Лесные огоньки: история одной фотографии</h4>
-              <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-                запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <span class="card__source">Медуза</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение тайги" src="<%=require('./images/taiga.png')%>">
-              <button class="card__anchor" type="button"></button>
-              <span class="card__alert">Войдите, чтобы сохранять статьи</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
-              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
-                необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              <span class="card__source">Риа</span>
-            </div>
           </div>
           <button class="button button_show-more" type="button">Показать ещё</button>
         </div>
@@ -149,9 +117,10 @@
         <img src="<%=require('./images/avatar.png')%>" class="about__photo" alt="Фотография автора">
         <div class="about__container">
           <h3 class="about__header">Об авторе</h3>
-          <p class="about__info">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем
-            вы занимаетесь, какими технологиями разработки владеете.<br><br> Также можно рассказать о процессе
-            обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+          <p class="about__info">Привет, меня зовут Рома и я — начинающий веб-разработчик. Владею навыками адаптивной
+            вёрстки, разработки на JS и Node.js, сборки проекта при помощи WebPack, знаком с методологией БЭМ.<br><br>
+            Данный сервис - дипломный проект курса "Веб-разработчик" от Яндекс.Практикум. Сайт позволяет найти
+            актуальные новости и сохранить их в своём личном кабинете.</p>
         </div>
       </section>
     </main>

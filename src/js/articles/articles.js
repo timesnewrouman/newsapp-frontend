@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import '../../articles.css';
 import MainApi from '../api/MainApi';
 import NewsCard from '../components/NewsCard';
@@ -57,7 +58,6 @@ function resultsHeaderTagsReview() {
         }
         i--;
       }
-      console.log(processedResult);
       if (processedResult.length === 1) {
         resultsTags.textContent = `По ключевому слову ${processedResult[0].keyword[0].toUpperCase() + processedResult[0].keyword.slice(1)}`;
         return resultsTags;

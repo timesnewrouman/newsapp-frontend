@@ -20,9 +20,8 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
-      })
-      .catch((err) => Promise.reject(new Error(`Ошибка: ${err.status}`)));
+        return Promise.reject(res);
+      });
   }
 
   signin(email, password) {
@@ -41,9 +40,8 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
-      })
-      .catch((err) => Promise.reject(new Error(`Ошибка: ${err.status}`)));
+        return Promise.reject(res);
+      });
   }
 
   createArticle(keyword, title, text, date, source, link, image) {
@@ -67,10 +65,9 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+        return Promise.reject(res);
       })
-      .then((data) => data.data)
-      .catch((err) => Promise.reject(new Error(`Ошибка: ${err.status}`)));
+      .then((data) => data.data);
   }
 
   removeArticle(id) {
@@ -82,9 +79,8 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
-      })
-      .catch((err) => Promise.reject(new Error(`Ошибка: ${err.status}`)));
+        return Promise.reject(res);
+      });
   }
 
   getArticles() {
@@ -95,10 +91,9 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+        return Promise.reject(res);
       })
-      .then((data) => data.data)
-      .catch(() => Promise.reject(new Error('Совпадений не найдено')));
+      .then((data) => data.data);
   }
 
   getUserData() {
@@ -109,10 +104,9 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+        return Promise.reject(res);
       })
-      .then((data) => data.data)
-      .catch(() => Promise.reject(new Error('Пользователь не авторизован')));
+      .then((data) => data.data);
   }
 
   removeCookie() {

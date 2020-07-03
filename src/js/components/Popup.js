@@ -1,9 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 export default class Popup {
   constructor(element) {
     this.element = element;
     const closeButton = this.element.querySelector('.popup__close');
-    this.close = this.close.bind(this);
-    closeButton.addEventListener('click', this.close);
+    closeButton.addEventListener('click', this.close.bind(this));
   }
 
   open() {
@@ -17,7 +17,7 @@ export default class Popup {
   }
 
   transfer(event) {
-    event.target.parentElement.parentElement.parentElement.classList.remove('popup_is-opened');
+    event.target.closest('div.popup_is-opened').classList.remove('popup_is-opened');
     this.element.classList.add('popup_is-opened');
   }
 

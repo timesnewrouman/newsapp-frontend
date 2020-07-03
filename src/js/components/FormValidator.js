@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
@@ -5,7 +6,7 @@
 import { ERROR_MESSAGES } from '../constants/constants';
 
 export default class FormValidator {
-  static checkInputValidity(input, error) {
+  static _checkInputValidity(input, error) {
     for (const key in ERROR_MESSAGES) {
       if (input.validity[key]) {
         return error.textContent = ERROR_MESSAGES[key];
@@ -14,7 +15,7 @@ export default class FormValidator {
     error.textContent = '';
   }
 
-  static setSubmitButtonState(form, button) {
+  static _setSubmitButtonState(form, button) {
     button.disabled = !form.checkValidity();
 
     if (form.checkValidity()) {
@@ -31,8 +32,8 @@ export default class FormValidator {
     const button = form.querySelector('.button.button_popup');
 
     function validate(event) {
-      FormValidator.checkInputValidity(event.target, event.target.closest('div').querySelector('.form__field-error'));
-      FormValidator.setSubmitButtonState(form, button);
+      FormValidator._checkInputValidity(event.target, event.target.closest('div').querySelector('.form__field-error'));
+      FormValidator._setSubmitButtonState(form, button);
     }
 
     form.addEventListener('input', validate);

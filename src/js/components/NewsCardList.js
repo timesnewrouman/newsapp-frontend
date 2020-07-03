@@ -39,7 +39,7 @@ export default class NewsCardList {
 
   renderResults(articlesArray) {
     const processedArray = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < articlesArray.length; i++) {
       const data = {
         title: articlesArray[i].title,
         text: articlesArray[i].description,
@@ -53,18 +53,11 @@ export default class NewsCardList {
     return processedArray;
   }
 
-  showMore(articlesArray, alreadyExist) {
+  showMore(articlesArray) {
     const processedArray = [];
-    for (let i = alreadyExist.length; i < alreadyExist.length + 3; i++) {
-      const data = {
-        title: articlesArray[i].title,
-        text: articlesArray[i].description,
-        date: articlesArray[i].publishedAt.substring(0, 10),
-        source: articlesArray[i].source.name,
-        link: articlesArray[i].url,
-        image: articlesArray[i].urlToImage,
-      };
-      processedArray.push(data);
+    const cardsInRow = 3;
+    for (let i = 0; i < cardsInRow; i++) {
+      processedArray.push(articlesArray[i]);
       if (articlesArray[i + 1] === undefined) {
         return processedArray;
       }

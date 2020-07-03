@@ -13,11 +13,12 @@ import {
 
 const api = new MainApi(serverUrl);
 const newsCardList = new NewsCardList(cardContainer);
+const header = new Header(headerSaved, headerLogout, headerButtonText);
+const menu = new Menu(headerBlock);
 
 function loginCheck() {
   api.getUserData()
     .then((data) => {
-      const header = new Header(headerSaved, headerLogout, headerButtonText);
       header.render(data.name);
     })
     .catch(() => {
@@ -42,75 +43,92 @@ function resultsHeaderReview(array) {
 
 function resultsHeaderTagsReview() {
   api.getArticles()
-    .then((result) => {
+    .then((savedArticlesArray) => {
       const processedResult = [];
-      let i = result.length - 1;
+      let i = savedArticlesArray.length - 1;
       while (i > 0) {
-        if (result[i].keyword === result[i - 1].keyword) {
-          result.pop();
-        } else if (result[i].keyword !== result[i - 1].keyword) {
-          processedResult.push(result[i]);
-          result.pop();
+        if (savedArticlesArray[i].keyword === savedArticlesArray[i - 1].keyword) {
+          savedArticlesArray.pop();
+        } else if (savedArticlesArray[i].keyword !== savedArticlesArray[i - 1].keyword) {
+          processedResult.push(savedArticlesArray[i]);
+          savedArticlesArray.pop();
         }
         if (i === 1) {
-          processedResult.push(result[0]);
-          result.pop();
+          processedResult.push(savedArticlesArray[0]);
+          savedArticlesArray.pop();
         }
         i--;
       }
       if (processedResult.length === 1) {
-        resultsTags.textContent = `По ключевому слову ${processedResult[0].keyword[0].toUpperCase() + processedResult[0].keyword.slice(1)}`;
+        resultsTags.textContent = `По ключевому слову ${processedResult[0].keyword[0].toUpperCase()
+          + processedResult[0].keyword.slice(1)}`;
         return resultsTags;
       }
       if (processedResult.length === 2) {
-        resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase() + processedResult[0].keyword.slice(1)} и
+        resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase()
+          + processedResult[0].keyword.slice(1)} и
         ${processedResult[1].keyword[0].toUpperCase() + processedResult[1].keyword.slice(1)}`;
         return resultsTags;
       }
       if (processedResult.length === 3) {
-        resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase() + processedResult[0].keyword.slice(1)},
+        resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase()
+          + processedResult[0].keyword.slice(1)},
         ${processedResult[1].keyword[0].toUpperCase() + processedResult[1].keyword.slice(1)} и
         ${processedResult[2].keyword[0].toUpperCase() + processedResult[2].keyword.slice(1)}`;
         return resultsTags;
       }
-      resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase() + processedResult[0].keyword.slice(1)},
-       ${processedResult[1].keyword[0].toUpperCase() + processedResult[1].keyword.slice(1)} и ${processedResult.length - 2} другим`;
+      resultsTags.textContent = `По ключевым словам ${processedResult[0].keyword[0].toUpperCase()
+        + processedResult[0].keyword.slice(1)}, ${processedResult[1].keyword[0].toUpperCase()
+        + processedResult[1].keyword.slice(1)} и ${processedResult.length - 2} другим`;
       return resultsTags;
+    })
+    .catch(() => {
+      alert('Произошла ошибка обработки ключевых слов');
     });
 }
 
 function getSavedArticles() {
   api.getArticles()
-    .then((result) => {
-      if (result.length === 0) {
+    .then((savedArticlesArray) => {
+      if (savedArticlesArray.length === 0) {
         newsCardList.resultsDisactivate(resultsFound);
         return newsCardList.renderErrorActivate(resultsNotFound);
       }
-      for (let i = 0; i < result.length; i++) {
-        const newsCard = new NewsCard(result[i]);
+      for (let i = 0; i < savedArticlesArray.length; i++) {
+        const newsCard = new NewsCard(savedArticlesArray[i]);
         newsCard.getSaved();
         const card = newsCard.getSaved();
-        card.setAttribute('cardId', result[i]._id);
+        card.setAttribute('cardId', savedArticlesArray[i]._id);
         newsCardList.addCard(card);
       }
-      resultsHeaderReview(result);
+      resultsHeaderReview(savedArticlesArray);
       return resultsHeaderTagsReview();
+    })
+    .catch(() => {
+      alert('Произошла ошибка загрузки сохранённых статей');
     });
 }
 
-cardContainer.addEventListener('click', (event) => {
+function cardOperationsHandler(event) {
   const card = event.target.parentElement;
   if (event.target.classList.contains('card__delete')) {
-    api.removeArticle(card.getAttribute('cardId'));
-    card.parentElement.removeChild(card);
-    if (cardContainer.childNodes.length - 1 === 0) {
-      newsCardList.resultsDisactivate(resultsFound);
-      newsCardList.renderErrorActivate(resultsNotFound);
-    }
-    resultsHeaderReview(cardContainer.children);
-    resultsHeaderTagsReview();
+    api.removeArticle(card.getAttribute('cardId'))
+      .then(() => {
+        card.parentElement.removeChild(card);
+        if (cardContainer.childNodes.length - 1 === 0) {
+          newsCardList.resultsDisactivate(resultsFound);
+          newsCardList.renderErrorActivate(resultsNotFound);
+        }
+        resultsHeaderReview(cardContainer.children);
+        resultsHeaderTagsReview();
+      })
+      .catch(() => {
+        alert('Произошла ошибка удаления');
+      });
   }
-});
+}
+
+cardContainer.addEventListener('click', cardOperationsHandler);
 
 exitSavedButton.addEventListener('click', () => {
   api.removeCookie()
@@ -122,7 +140,6 @@ exitSavedButton.addEventListener('click', () => {
 });
 
 menuButton.addEventListener('click', () => { // нажатие на кнопку меню
-  const menu = new Menu(headerBlock);
   menu.open();
 });
 

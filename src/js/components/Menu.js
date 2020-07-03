@@ -1,9 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 export default class Menu {
   constructor(element) {
     this.element = element;
     const closeButton = this.element.querySelector('.header__close');
-    this.close = this.close.bind(this);
-    closeButton.addEventListener('click', this.close);
+    closeButton.addEventListener('click', this._close.bind(this));
   }
 
   open() {
@@ -18,7 +18,7 @@ export default class Menu {
     this.element.closest('div').querySelector('.page__overlay').classList.add('page__overlay_is-activated');
   }
 
-  close() {
+  _close() {
     this.element.classList.remove('header_mobile');
     this.element.querySelector('.header__menu').classList.remove('header__menu_is-opened');
     this.element.querySelector('.header__close').classList.remove('header__close_is-opened');

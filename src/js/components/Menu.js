@@ -11,7 +11,6 @@ export default class Menu {
     this.element.querySelector('.header__menu').classList.add('header__menu_is-opened');
     this.element.querySelector('.header__close').classList.add('header__close_is-opened');
     this.element.querySelector('.header__main').classList.add('header__main_mobile');
-    this.element.querySelector('.header__saved').classList.add('header__saved_logged-in');
     this.element.querySelector('.header__saved').classList.add('header__saved_mobile');
     this.element.querySelector('.button').classList.add('button_mobile');
     this.element.closest('div').querySelector('.search').style.marginTop = 0;
@@ -23,7 +22,6 @@ export default class Menu {
     this.element.querySelector('.header__menu').classList.remove('header__menu_is-opened');
     this.element.querySelector('.header__close').classList.remove('header__close_is-opened');
     this.element.querySelector('.header__main').classList.remove('header__main_mobile');
-    this.element.querySelector('.header__saved').classList.remove('header__saved_logged-in');
     this.element.querySelector('.header__saved').classList.remove('header__saved_mobile');
     this.element.querySelector('.button').classList.remove('button_mobile');
     this.element.closest('div').querySelector('.search').style.marginTop = '-57px';

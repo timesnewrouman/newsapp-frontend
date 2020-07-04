@@ -50,7 +50,8 @@ function closePopupEscape() {
   successPopupVariable.close();
 }
 
-function articlesSearch() {
+function articlesSearch(event) {
+  event.preventDefault();
   if (searchInput.value === '') {
     return newsCardList.renderErrorActivate(resultsNotFound);
   }
@@ -153,7 +154,8 @@ function showMore() {
   }
 }
 
-function login() {
+function login(event) {
+  event.preventDefault();
   const data = {
     email: formLogin.elements.email.value,
     password: formLogin.elements.password.value,
@@ -177,7 +179,8 @@ function login() {
     });
 }
 
-function signup() {
+function signup(event) {
+  event.preventDefault();
   const data = {
     email: formSignup.elements.email.value,
     password: formSignup.elements.password.value,
@@ -202,6 +205,7 @@ function signup() {
 }
 
 function cardOperationsHandler(event) {
+  event.preventDefault();
   const card = event.target.parentElement;
   const alertsArray = cardContainer.querySelectorAll('.card__alert');
   for (let i = 0; i < alertsArray.length; i++) {

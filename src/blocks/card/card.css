@@ -7,6 +7,7 @@
 @import url(./__alert/card__alert.css);
 @import url(./__delete/card__delete.css);
 @import url(./__tag/card__tag.css);
+@import url(./_link/card_link.css);
 
 .card {
   position: relative;

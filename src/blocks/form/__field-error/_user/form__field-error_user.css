@@ -1,13 +1,9 @@
 .form__field-error.form__field-error_user {
-  top: 307px;
-  left: 115px;
+  top: 292px;
 }
 
 @media screen and (max-width : 576px) {
   .form__field-error.form__field-error_user {
-    top: 299px;
-    left: 10px;
-    right: 10px;
-    text-align: center;
+    top: 274px;
   }
 }

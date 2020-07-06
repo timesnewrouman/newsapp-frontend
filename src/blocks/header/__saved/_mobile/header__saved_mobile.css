@@ -2,6 +2,7 @@
   margin: 0 0 32px 16px;
   align-self: auto;
   color: #ffffff;
+  display: block;
 }
 
 .header__saved_saved.header__saved.header__saved_mobile {
@@ -9,4 +10,10 @@
   align-self: auto;
   color: #1A1B22;
   display: block;
+}
+
+@media screen and (max-width : 576px) {
+  .header__saved_logged-in.header__saved.header__saved_mobile {
+    display: block;
+  }
 }

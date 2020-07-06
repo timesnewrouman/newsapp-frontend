@@ -15,12 +15,12 @@
 <body>
   <div class="page">
     <div class="page__overlay"></div>
-    <header class="header">
+    <header class="header header_saved">
       <h4 class="header__name header__name_saved">NewsExplorer</h4>
       <a class="header__main header__main_saved" href="./index.html">Главная</a>
       <a class="header__saved header__saved_logged-in header__saved_saved" href="./articles.html">Сохраненные статьи</a>
       <button class="button button_saved">
-        Грета
+        <span class="button_text">Пользователь</span>
         <img class="header__logout header__logout_logged-in" src="<%=require('./images/logout(black).svg')%>"
           alt="Иконка выхода">
       </button>
@@ -33,79 +33,16 @@
         <div class="results__not-found">
           <img class="results__not-found-image" alt="Грустное лицо" src="<%=require('./images/not-found.svg')%>">
           <span class="results__not-found-text">Ничего не найдено</span>
-          <span class="results__not-found-explanation">К сожалению по вашему запросу ничего не найдено.</span>
+          <span class="results__not-found-explanation">Вы ещё не добавили ни одной статьи.</span>
         </div>
-        <div class="results__found">
+        <div class="results__found results__found_exist">
           <div class="results__buffer">
             <span class="results__preview">Сохранённые статьи</span>
-            <h2 class="results__header results__header_saved">Грета, у вас 5 сохранённых статей</h2>
-            <span class="results__preview-tags">По ключевым словам: <b>Природа,</b> <b>Тайга</b> и <b>2
-                другим</b></span>
+            <h2 class="results__header results__header_saved"></h2>
+            <span class="results__preview-tags"></span>
           </div>
           <div class="results__cards-container">
-            <div class="card">
-              <img class="card__image" alt="Изображение парка" src="<%=require('./images/nature-parks.png')%>">
-              <button class="card__delete" type="button"></button>
-              <span class="card__alert">Убрать из сохранённых</span>
-              <span class="card__tag">Природа</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Национальное достояние – парки</h4>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">Дзен</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение лесных огоньков"
-                src="<%=require('./images/nature-photo.png')%>">
-              <button class="card__delete" type="button"></button>
-              <span class="card__alert">Убрать из сохранённых</span>
-              <span class="card__tag">Природа</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Лесные огоньки: история одной фотографии</h4>
-              <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-                запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <span class="card__source">Афиша</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение тайги" src="<%=require('./images/taiga2.png')%>">
-              <button class="card__delete" type="button"></button>
-              <span class="card__alert">Убрать из сохранённых</span>
-              <span class="card__tag">Тайга</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
-              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
-                необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              <span class="card__source">Медиазона</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение парка" src="<%=require('./images/nature-parks.png')%>">
-              <button class="card__delete" type="button"></button>
-              <span class="card__alert">Убрать из сохранённых</span>
-              <span class="card__tag">Парки</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Национальное достояние – парки</h4>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">Дзен</span>
-            </div>
-            <div class="card">
-              <img class="card__image" alt="Изображение лесных огоньков"
-                src="<%=require('./images/nature-photo.png')%>">
-              <button class="card__delete" type="button"></button>
-              <span class="card__alert">Убрать из сохранённых</span>
-              <span class="card__tag">Фотография</span>
-              <span class="card__date">2 августа, 2019</span>
-              <h4 class="card__name">Лесные огоньки: история одной фотографии</h4>
-              <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-                запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <span class="card__source">Афиша</span>
-            </div>
           </div>
-          <button class="button button_show-more" type="button">Показать ещё</button>
         </div>
       </section>
     </main>

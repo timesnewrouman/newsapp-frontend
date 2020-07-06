@@ -1,6 +1,9 @@
 @import url(./_user/form__field-error_user.css);
 @import url(./_email/form__field-error_email.css);
 @import url(./_password/form__field-error_password.css);
+@import url(./_button/form__field-error_button.css);
+@import url(./_login/form__field-error_login.css);
+@import url(./_signup/form__field-error_signup.css);
 
 .form__field-error {
   position: absolute;

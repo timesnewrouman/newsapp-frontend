@@ -2,12 +2,13 @@
   display: flex;
   font-size: 16px;
   line-height: 22px;
-  color: #B6BCBF;
-  max-width: 376px;
+  color: #1A1B22;
+  width: 100%;
   min-width: 228px;
   margin: 0 40px 0 24px;
   border: 0;
   padding: 21px 0;
+  outline: none;
 }
 
 @media screen and (max-width : 800px) {

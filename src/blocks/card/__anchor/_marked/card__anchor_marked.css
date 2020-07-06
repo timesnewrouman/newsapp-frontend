@@ -1,3 +1,7 @@
 .card__anchor.card__anchor_marked {
   background-image: url(../../../../images/anchor-marked.svg);
 }
+
+.card__anchor.card__anchor_marked:hover {
+  background-image: url(../../../../images/anchor-marked.svg);
+}

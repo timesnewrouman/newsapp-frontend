@@ -1,9 +1,9 @@
 # Yandex.Praktikum
 #### Жигайков Роман
 ###### Дипломный проект newsapp
-###### Версия 1.1.1
+###### Версия 1.1.2
 
-Актуальная версия программы доступна по ссылке https://timesnewrouman.github.io/newsapp-frontend.
+Актуальная версия программы доступна по ссылке https://newsapp.gq.
 
 Front-end часть дипломного проекта курса "Веб-разработчик" от Яндекс.Практикум. Back-end часть доступна по ссылке https://github.com/timesnewrouman/newsapp-api.
 

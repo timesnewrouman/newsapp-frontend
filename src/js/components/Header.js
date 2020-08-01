@@ -15,7 +15,6 @@ export default class Header {
     this.headerButtonText.textContent = 'Авторизоваться';
     this.headerLogout.classList.remove('header__logout_logged-in');
     this.headerSaved.classList.remove('header__saved_logged-in');
-    // window.location.href = '/'; // local вариант
-    window.location.href = 'https://timesnewrouman.github.io/newsapp-frontend'; // stable вариант
+    window.location.href = 'https://newsapp.gq'; // stable вариант
   }
 }

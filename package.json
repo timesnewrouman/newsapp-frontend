@@ -1,13 +1,14 @@
 {
   "name": "newsapp-frontend",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Yandex.Praktikum web-development diploma",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production webpack-dev-server --mode production --open",
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
+    "deploy": "cross-env NODE_ENV=production gh-pages -d dist",
+    "deployServer": "npm run build && scp -r ./dist/* timesnewrouman@84.201.139.131:/home/timesnewrouman/newsapp-frontend"
   },
   "repository": {
     "type": "git",

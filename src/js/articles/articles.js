@@ -22,8 +22,7 @@ function loginCheck() {
       header.render(data.name);
     })
     .catch(() => {
-      // window.location.href = '/'; // local вариант
-      window.location.href = 'https://timesnewrouman.github.io/newsapp-frontend'; // stable вариант
+      window.location.href = 'https://newsapp.gq'; // stable вариант
       alert('Нужно авторизироваться');
     });
 }
@@ -45,19 +44,24 @@ function resultsHeaderTagsReview() {
   api.getArticles()
     .then((savedArticlesArray) => {
       const processedResult = [];
-      let i = savedArticlesArray.length - 1;
-      while (i > 0) {
-        if (savedArticlesArray[i].keyword === savedArticlesArray[i - 1].keyword) {
-          savedArticlesArray.pop();
-        } else if (savedArticlesArray[i].keyword !== savedArticlesArray[i - 1].keyword) {
-          processedResult.push(savedArticlesArray[i]);
-          savedArticlesArray.pop();
+      if (savedArticlesArray.length === 1) {
+        processedResult.push(savedArticlesArray[0]);
+      }
+      if (savedArticlesArray.length > 1) {
+        let i = savedArticlesArray.length - 1;
+        while (i > 0) {
+          if (savedArticlesArray[i].keyword === savedArticlesArray[i - 1].keyword) {
+            savedArticlesArray.pop();
+          } else if (savedArticlesArray[i].keyword !== savedArticlesArray[i - 1].keyword) {
+            processedResult.push(savedArticlesArray[i]);
+            savedArticlesArray.pop();
+          }
+          if (i === 1) {
+            processedResult.push(savedArticlesArray[0]);
+            savedArticlesArray.pop();
+          }
+          i--;
         }
-        if (i === 1) {
-          processedResult.push(savedArticlesArray[0]);
-          savedArticlesArray.pop();
-        }
-        i--;
       }
       if (processedResult.length === 1) {
         resultsTags.textContent = `По ключевому слову ${processedResult[0].keyword[0].toUpperCase()
@@ -133,8 +137,7 @@ cardContainer.addEventListener('click', cardOperationsHandler);
 exitSavedButton.addEventListener('click', () => {
   api.removeCookie()
     .then(() => {
-      // window.location.href = '/'; // local вариант
-      window.location.href = 'https://timesnewrouman.github.io/newsapp-frontend'; // stable вариант
+      window.location.href = 'https://newsapp.gq'; // stable вариант
     })
     .catch((err) => alert(err));
 });

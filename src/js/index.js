@@ -50,8 +50,7 @@ function closePopupEscape() {
   successPopupVariable.close();
 }
 
-function articlesSearch(event) {
-  event.preventDefault();
+function articlesSearch() {
   if (searchInput.value === '') {
     return newsCardList.renderErrorActivate(resultsNotFound);
   }
@@ -120,7 +119,7 @@ function articlesSearch(event) {
       }
     })
     .catch(() => {
-      alert('Произошла ошибка обработки статей');
+      console.log('Произошла ошибка обработки статей');
     });
 }
 
@@ -146,7 +145,7 @@ function showMore() {
         }
       })
       .catch(() => {
-        alert('Произошла ошибка обработки статей');
+        console.log('Произошла ошибка обработки статей');
       });
   }
   if (articlesArray.length <= 3) {
@@ -205,7 +204,6 @@ function signup(event) {
 }
 
 function cardOperationsHandler(event) {
-  event.preventDefault();
   const card = event.target.parentElement;
   const alertsArray = cardContainer.querySelectorAll('.card__alert');
   for (let i = 0; i < alertsArray.length; i++) {
@@ -224,25 +222,27 @@ function cardOperationsHandler(event) {
         Promise.reject(new Error('Произошла ошибка'));
       });
   }
-  const data = {
-    keyword: searchInput.value,
-    title: card.querySelector('.card__name').textContent,
-    text: card.querySelector('.card__text').textContent,
-    date: card.querySelector('.card__date').textContent,
-    source: card.querySelector('.card__source').textContent,
-    link: card.querySelector('.card.card_link').href,
-    image: card.querySelector('.card__image').src,
-  };
-  api.createArticle(data.keyword, data.title, data.text,
-    data.date, data.source, data.link, data.image)
-    .then((cardId) => {
-      event.target.classList.add('card__anchor_marked');
-      card.setAttribute('cardId', cardId);
-    })
-    .catch(() => {
-      alert('Сохранение не удалось');
-      Promise.reject(new Error('Произошла ошибка'));
-    });
+  if (event.target.classList.contains('card__anchor')) {
+    const data = {
+      keyword: searchInput.value,
+      title: card.querySelector('.card__name').textContent,
+      text: card.querySelector('.card__text').textContent,
+      date: card.querySelector('.card__date').textContent,
+      source: card.querySelector('.card__source').textContent,
+      link: card.querySelector('.card.card_link').href,
+      image: card.querySelector('.card__image').src,
+    };
+    api.createArticle(data.keyword, data.title, data.text,
+      data.date, data.source, data.link, data.image)
+      .then((cardId) => {
+        event.target.classList.add('card__anchor_marked');
+        card.setAttribute('cardId', cardId);
+      })
+      .catch(() => {
+        alert('Сохранение не удалось');
+        Promise.reject(new Error('Произошла ошибка'));
+      });
+  }
 }
 
 loginButton.addEventListener('click', () => { // нажатие на кнопку в header

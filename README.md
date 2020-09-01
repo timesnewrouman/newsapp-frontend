@@ -12,7 +12,7 @@ Front-end часть дипломного проекта курса "Веб-ра
 ### Локальная работа с репозиторием
 1) Скопируйте репозиторий себе на компьютер командой:
 ```sh
-git clone https://github.com/timesnewrouman/newsapp-api.git
+git clone https://github.com/timesnewrouman/newsapp-frontend.git
 ```
 2) Установите npm зависимости:
 ```sh
